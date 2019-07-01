@@ -1,0 +1,5 @@
+services:
+    SQLI\CommandsToolboxBundle\QueryType\:
+        resource: ../../QueryType/
+        tags:
+            - { name: ezpublish.query_type }
