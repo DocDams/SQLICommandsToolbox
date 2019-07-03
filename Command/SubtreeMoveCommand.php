@@ -7,6 +7,7 @@ use eZ\Publish\API\Repository\Repository;
 use eZ\Publish\API\Repository\SearchService;
 use eZ\Publish\Core\QueryType\QueryTypeRegistry;
 use Symfony\Bundle\FrameworkBundle\Command\ContainerAwareCommand;
+use Symfony\Component\Console\Input\InputArgument;
 use Symfony\Component\Console\Input\InputInterface;
 use Symfony\Component\Console\Input\InputOption;
 use Symfony\Component\Console\Output\OutputInterface;
@@ -32,8 +33,8 @@ class SubtreeMoveCommand extends ContainerAwareCommand
     {
         $this->setName( 'sqli:move:subtree' )
             ->setDescription( 'Move "currentParentLocationID" and it\'s subtree under "newParentLocationID"' )
-            ->addOption( 'current', null, InputOption::VALUE_REQUIRED, "Move this locationID and it's subtree" )
-            ->addOption( 'new', null, InputOption::VALUE_REQUIRED, "Move children under this locationID" );
+            ->addArgument( 'current', InputArgument::REQUIRED, "Move this locationID and it's subtree" )
+            ->addArgument( 'new', InputArgument::REQUIRED, "Move children under this locationID" );
     }
 
     /**
