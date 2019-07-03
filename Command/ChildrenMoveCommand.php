@@ -9,6 +9,7 @@ use eZ\Publish\API\Repository\Values\Content\LocationQuery;
 use eZ\Publish\Core\QueryType\QueryTypeRegistry;
 use eZ\Publish\Core\Repository\SearchService;
 use Symfony\Bundle\FrameworkBundle\Command\ContainerAwareCommand;
+use Symfony\Component\Console\Input\InputArgument;
 use Symfony\Component\Console\Input\InputInterface;
 use Symfony\Component\Console\Input\InputOption;
 use Symfony\Component\Console\Output\OutputInterface;
@@ -34,8 +35,8 @@ class ChildrenMoveCommand extends ContainerAwareCommand
     {
         $this->setName( 'sqli:move:children' )
             ->setDescription( 'Move all children of "currentParentLocationID" under "newParentLocationID"' )
-            ->addOption( 'current', null, InputOption::VALUE_REQUIRED, "Move children of this locationID" )
-            ->addOption( 'new', null, InputOption::VALUE_REQUIRED, "Move children under this locationID" );
+            ->addArgument( 'current', InputArgument::REQUIRED, "Move children of this locationID" )
+            ->addArgument( 'new', InputArgument::REQUIRED, "Move children under this locationID" );
     }
 
     /**
