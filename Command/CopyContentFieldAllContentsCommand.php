@@ -149,7 +149,7 @@ class CopyContentFieldAllContentsCommand extends ContainerAwareCommand
                             }
                             else
                             {
-                                continue;
+                                continue 2;
                             }
                     }
 
