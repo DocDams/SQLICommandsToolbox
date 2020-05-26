@@ -1,4 +1,9 @@
 services:
+    _defaults:
+        autowire: true
+        autoconfigure: true
+        public: false
+
     SQLI\CommandsToolboxBundle\QueryType\:
         resource: ../../QueryType/
         tags:
