@@ -3,3 +3,11 @@ services:
         resource: ../../QueryType/
         tags:
             - { name: ezpublish.query_type }
+
+    SQLI\CommandsToolboxBundle\Services\:
+        resource: ../../Services/
+
+    SQLI\CommandsToolboxBundle\Services\Twig\:
+        resource: ../../Services/Twig/
+        tags:
+            - { name: twig.extension }
